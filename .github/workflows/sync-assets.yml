@@ -17,7 +17,7 @@ jobs :
     runs-on : ubuntu-latest
     steps :
       - name : Checkout
-        uses : actions/checkout@v4
+        uses : actions/checkout@v5
 
       - name : Setup PHP 8.5
         uses : shivammathur/setup-php@v2
@@ -49,7 +49,7 @@ jobs :
 
       - name : Upload laravel-docs-assets artifact
         if : steps.diff.outputs.changed == 'true'
-        uses : actions/upload-artifact@v4
+        uses : actions/upload-artifact@v7
         with :
           name : laravel-docs-assets
           path : |

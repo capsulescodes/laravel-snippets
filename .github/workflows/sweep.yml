@@ -29,7 +29,7 @@ jobs :
     timeout-minutes : 60
     steps :
       - name : Checkout
-        uses : actions/checkout@v4
+        uses : actions/checkout@v5
 
       - name : Setup PHP 8.5
         uses : shivammathur/setup-php@v2
@@ -40,7 +40,7 @@ jobs :
           tools : composer:v2
 
       - name : Setup Node 24
-        uses : actions/setup-node@v4
+        uses : actions/setup-node@v5
         with :
           node-version : '24'
           cache : npm
@@ -60,7 +60,7 @@ jobs :
 
       - name : Cache Playwright browsers
         id : playwright-cache
-        uses : actions/cache@v4
+        uses : actions/cache@v5
         with :
           path : ~/.cache/ms-playwright
           key : playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}-chromium
@@ -157,7 +157,7 @@ jobs :
           '
 
       - name : Upload snippet-report artifact
-        uses : actions/upload-artifact@v4
+        uses : actions/upload-artifact@v7
         with :
           name : snippet-report
           path : tests/report.json
